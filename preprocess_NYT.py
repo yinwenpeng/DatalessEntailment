@@ -49,7 +49,7 @@ rel_replace_map = {'/location/administrative_division/country': ['is in the neig
 
 def statistics(filename):
     data_file = codecs.open(filename, 'r', encoding='utf-8')
-    write_file = codecs.open('/save/wenpeng/datasets/NYT/test_into_sentStatements.txt', 'w',encoding='utf-8')
+    # write_file = codecs.open('/save/wenpeng/datasets/NYT/test_into_sentStatements_twoEntityExist.txt', 'w',encoding='utf-8')
     mention_size = 0
     rel_type_set = set()
     write_size = 0
@@ -71,7 +71,7 @@ def statistics(filename):
     data_file.close()
 
     data_file = codecs.open(filename, 'r', encoding='utf-8')
-    write_file = codecs.open('/save/wenpeng/datasets/NYT/test_into_sentStatements.txt', 'w',encoding='utf-8')
+    write_file = codecs.open('/save/wenpeng/datasets/NYT/test_into_sentStatements_twoEntityExist.txt', 'w',encoding='utf-8')
     for line in data_file:
         data_dict = json.loads(line)
         sent = data_dict.get('sentText').strip()
@@ -112,9 +112,9 @@ def statistics(filename):
                 nega_4_statement = head_replace+' '+label_description+' '+ tail_replace
 
                 write_file.write(sent+'\t'+nega_1_statement+'\t'+str(0)+'\n')
-                write_file.write(sent+'\t'+nega_2_statement+'\t'+str(0)+'\n')
-                write_file.write(sent+'\t'+nega_3_statement+'\t'+str(0)+'\n')
-                write_file.write(sent+'\t'+nega_4_statement+'\t'+str(0)+'\n')
+                # write_file.write(sent+'\t'+nega_2_statement+'\t'+str(0)+'\n')
+                # write_file.write(sent+'\t'+nega_3_statement+'\t'+str(0)+'\n')
+                # write_file.write(sent+'\t'+nega_4_statement+'\t'+str(0)+'\n')
 
 
 
