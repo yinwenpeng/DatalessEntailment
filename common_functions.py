@@ -18,9 +18,17 @@ def f1_score_2_binary_list(gold_list, pred_list):
     for i, label in enumerate(gold_list):
         if label == 1 and pred_list[i]==1:
             match+=1
+
+    print '\t\t numbers:', match, pos_size_gold, pos_size_pred
     match*=1.0
 
-    return (match/pos_size_gold+match/pos_size_pred)/2.0
+    if match == 0.0:
+        return 0.0
+
+    recall = match/pos_size_gold
+    precision = match/pos_size_pred
+
+    return 2*recall*precision/(recall+precision)
 
 
 

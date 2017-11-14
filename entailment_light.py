@@ -25,7 +25,7 @@ from common_functions import f1_score_2_binary_list,Conv_for_Pair,dropout_layer,
 1, use entity type info
 '''
 
-def evaluate_lenet5(learning_rate=0.02, n_epochs=4, L2_weight=0.0000001, extra_size=4, emb_size=300, batch_size=5, filter_size=[3,5], maxSentLen=60, hidden_size=[300,300]):
+def evaluate_lenet5(learning_rate=0.02, n_epochs=4, L2_weight=0.0000001, extra_size=4, emb_size=300, batch_size=50, filter_size=[3,5], maxSentLen=60, hidden_size=[300,300]):
 
     model_options = locals().copy()
     print "model options", model_options
